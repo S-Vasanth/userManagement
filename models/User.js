@@ -9,7 +9,6 @@ const UserSchema = new mongoose.Schema({
   profession: { type: String, required: true },
 });
 
-// Encrypt password before saving
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     return next();

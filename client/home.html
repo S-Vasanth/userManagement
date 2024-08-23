@@ -12,7 +12,6 @@
         <ul id="userList" class="list-group"></ul>
     </div>
 
-    <!-- Modal for Editing User -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -82,18 +81,18 @@
         });
 
         function editUser(id, name, phone, profession) {
-    console.log("Editing user:", id, name, phone, profession); // Debugging line
+    console.log("Editing user:", id, name, phone, profession)
     const modalElement = document.getElementById('editModal');
-    console.log("Modal element found:", modalElement); // Check if modal element exists
+    console.log("Modal element found:", modalElement); 
 
     if (modalElement) {
-        // Populate the modal with the user's data
+    
         document.getElementById('editUserId').value = id;
         document.getElementById('editName').value = name;
         document.getElementById('editPhone').value = phone;
         document.getElementById('editProfession').value = profession;
 
-        // Show the modal
+        
         const editModal = new bootstrap.Modal(modalElement);
         editModal.show();
     } else {
@@ -109,8 +108,8 @@
     const phone = document.getElementById('editPhone').value;
     const profession = document.getElementById('editProfession').value;
 
-    console.log("Submitting edit for user ID:", id); // Debugging line
-    console.log("New values:", { name, phone, profession }); // Debugging line
+    console.log("Submitting edit for user ID:", id); 
+    console.log("New values:", { name, phone, profession }); 
 
     try {
         const response = await fetch(`http://localhost:4000/api/users/${id}`, {
